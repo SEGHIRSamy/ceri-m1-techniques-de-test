@@ -1,18 +1,20 @@
 version: 2.1
-
 jobs:
-  build:
+  test:
     docker:
-      - image: circleci/openjdk:8-jdk
+      - image: circleci/openjdk:11-jdk
     steps:
       - checkout
       - run: mvn clean test
-
+      - run:
+          name: Générer le rapport coco
+          command: mvn jacoco:report
+      - run:
+          name: Télécharger le rapport sur coco
+          command: |
+            curl -s https://codecov.io/bash | bash -s -- -t ${CODECOV_TOKEN}
 workflows:
   version: 2
-  build_and_test:
+  test:
     jobs:
-      - build:
-          filters:
-            branches:
-              only: master
+      - test
