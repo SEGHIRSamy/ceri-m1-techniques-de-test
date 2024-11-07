@@ -1,5 +1,17 @@
 # UCE Génie Logiciel Avancé : Techniques de tests
 
+# Nom du Projet
+
+**Nom :** Samy SEGHIR
+
+**Groupe :** Alternant
+
+**Badge CircleCI :**
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/SEGHIRSamy/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/SEGHIRSamy/ceri-m1-techniques-de-test/tree/master)
+
+**Badge Codecov :**
+[![codecov](https://codecov.io/github/SEGHIRSamy/ceri-m1-techniques-de-test/graph/badge.svg?token=DMDH1H58MR)](https://codecov.io/github/SEGHIRSamy/ceri-m1-techniques-de-test)
+
 ## Introduction
 
 Vous allez à travers ces projet mettre en application une partie des aspects évoqués en cours vis à vis des techniques de tests.  
