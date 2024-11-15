@@ -76,6 +76,6 @@ public class IPokedexTest {
         PokemonMetadata metadata = pokedex.getPokemonMetadata(0);
         assertNotNull(metadata);
         assertEquals(0, metadata.getIndex());
-        assertEquals("Bulbasaur", metadata.getName());
+        assertEquals("Bulbizarre", metadata.getName());
     }
 }
