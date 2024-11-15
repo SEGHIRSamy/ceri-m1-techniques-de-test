@@ -49,4 +49,26 @@ public class IPokemonFactoryTest {
         assertEquals(dust, pokemon.getDust());
         assertEquals(candy, pokemon.getCandy());
     }
+
+    @Test(expected = PokedexException.class)
+    public void testCreatePokemonWithInvalidIndex() throws PokedexException {
+        int index = -1;
+        int cp = 500;
+        int hp = 60;
+        int dust = 4000;
+        int candy = 3;
+
+        pokemonFactory.createPokemon(index, cp, hp, dust, candy);
+    }
+
+    @Test(expected = PokedexException.class)
+    public void testCreatePokemonWithIndexOutOfUpperBound() throws PokedexException {
+        int index = 155;
+        int cp = 500;
+        int hp = 60;
+        int dust = 4000;
+        int candy = 3;
+
+        pokemonFactory.createPokemon(index, cp, hp, dust, candy);
+    }
 }
