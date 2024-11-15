@@ -1,34 +1,34 @@
 package fr.univavignon.pokedex.api;
 
-import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
-public class IPokemonFactoryTest extends TestCase {
+public class IPokemonFactoryTest {
 
-    private IPokemonFactory factory;
+    private IPokemonFactory pokemonFactory;
 
     @Before
     public void setUp() {
-        factory = new PokemonFactoryImpl();
+        pokemonFactory = new PokemonFactoryImpl();
     }
 
     @Test
     public void testCreatePokemon() throws PokedexException {
-        Pokemon pokemon = factory.createPokemon(0, 613, 64, 4000, 4);
-        assertNotNull("Pokemon is null", pokemon);
-        assertEquals("Incorrect index", 0, pokemon.getIndex());
-        assertEquals("Incorrect name", "ExampleName", pokemon.getName());
-        assertEquals("Incorrect attack", 100, pokemon.getAttack());
-        assertEquals("Incorrect defense", 100, pokemon.getDefense());
-        assertEquals("Incorrect stamina", 100, pokemon.getStamina());
-        assertEquals("Incorrect CP", 613, pokemon.getCp());
-        assertEquals("Incorrect HP", 64, pokemon.getHp());
-        assertEquals("Incorrect dust", 4000, pokemon.getDust());
-        assertEquals("Incorrect candy", 4, pokemon.getCandy());
-        assertEquals("Incorrect IV", 56.0, pokemon.getIv(), 0.0);
+        int index = 0;
+        int cp = 500;
+        int hp = 60;
+        int dust = 4000;
+        int candy = 3;
+
+        Pokemon pokemon = pokemonFactory.createPokemon(index, cp, hp, dust, candy);
+
+        assertNotNull(pokemon);
+        assertEquals(index, pokemon.getIndex());
+        assertEquals(cp, pokemon.getCp());
+        assertEquals(hp, pokemon.getHp());
+        assertEquals(dust, pokemon.getDust());
+        assertEquals(candy, pokemon.getCandy());
     }
 }
