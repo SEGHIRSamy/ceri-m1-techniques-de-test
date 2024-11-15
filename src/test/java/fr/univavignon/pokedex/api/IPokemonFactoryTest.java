@@ -32,4 +32,21 @@ public class IPokemonFactoryTest {
         assertEquals(candy, pokemon.getCandy());
     }
 
+    @Test
+    public void testCreatePokemonWithDifferentIndex() throws PokedexException {
+        int index = 133;
+        int cp = 1000;
+        int hp = 120;
+        int dust = 5000;
+        int candy = 10;
+
+        Pokemon pokemon = pokemonFactory.createPokemon(index, cp, hp, dust, candy);
+
+        assertNotNull(pokemon);
+        assertEquals(index, pokemon.getIndex());
+        assertEquals(cp, pokemon.getCp());
+        assertEquals(hp, pokemon.getHp());
+        assertEquals(dust, pokemon.getDust());
+        assertEquals(candy, pokemon.getCandy());
+    }
 }
