@@ -5,30 +5,27 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 public class IPokemonMetadataProviderTest extends TestCase {
 
     private IPokemonMetadataProvider provider;
-    private PokemonMetadata metadata;
 
     @Before
-    public void setUp() throws PokedexException {
-        provider = mock(IPokemonMetadataProvider.class);
-        metadata = new PokemonMetadata(0, "Bulbizarre", 126, 126, 90);
-        when(provider.getPokemonMetadata(0)).thenReturn(metadata);
+    public void setUp() {
+        provider = new PokemonMetadataProviderImpl();
     }
 
     @Test
     public void testGetPokemonMetadata() throws PokedexException {
         PokemonMetadata result = provider.getPokemonMetadata(0);
         assertNotNull("PokemonMetaData null", result);
-        assertEquals("Mauvais Index",0, result.getIndex());
-        assertEquals("Mauvais Nom","Bulbizarre", result.getName());
-        assertEquals("Mauvais Attaque",126, result.getAttack());
-        assertEquals("Mauvais Defense",126, result.getDefense());
-        assertEquals("Mauvais Stamina",90, result.getStamina());
+        assertEquals("Mauvais Index", 0, result.getIndex());
+        assertEquals("Mauvais Nom", "ExampleName", result.getName());
+        assertEquals("Mauvais Attaque", 100, result.getAttack());
+        assertEquals("Mauvais Defense", 100, result.getDefense());
+        assertEquals("Mauvais Stamina", 100, result.getStamina());
     }
 
     @Test
