@@ -31,4 +31,5 @@ public class IPokemonFactoryTest {
         assertEquals(dust, pokemon.getDust());
         assertEquals(candy, pokemon.getCandy());
     }
+
 }
