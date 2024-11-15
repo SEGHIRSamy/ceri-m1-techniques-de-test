@@ -4,29 +4,31 @@ import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class IPokemonTrainerFactoryTest extends TestCase {
 
-    private IPokemonTrainerFactory provider;
-    private PokemonTrainer pokemonTrainer;
-    private IPokedex pokedex;
+    private IPokemonTrainerFactory trainerFactory;
     private IPokedexFactory pokedexFactory;
 
     @Before
-    public void setUp() throws PokedexException {
-        provider = mock(IPokemonTrainerFactory.class);
-        pokemonTrainer = new PokemonTrainer("Kelian",Team.VALOR,pokedex);
-        when(provider.createTrainer("Kelian",Team.VALOR,pokedexFactory)).thenReturn(pokemonTrainer);
+    public void setUp() {
+        trainerFactory = new PokemonTrainerFactoryImpl();
+        pokedexFactory = new IPokedexFactory() {
+            @Override
+            public IPokedex createPokedex(IPokemonMetadataProvider metadataProvider, IPokemonFactory pokemonFactory) {
+                return new PokedexImpl(metadataProvider, pokemonFactory);
+            }
+        };
     }
 
     @Test
     public void testCreateTrainer() throws PokedexException {
-        PokemonTrainer result = provider.createTrainer("Kelian",Team.VALOR,pokedexFactory);
-        assertNotNull("Trainer null", result);
-        assertEquals("Mauvais Nom", "Kelian", result.getName());
-        assertEquals("Mauvais Team", Team.VALOR, result.getTeam());
-        assertEquals("Mauvais Pokedex",pokedexFactory, result.getPokedex());
+        PokemonTrainer trainer = trainerFactory.createTrainer("Ash", Team.VALOR, pokedexFactory);
+        assertNotNull("Trainer is null", trainer);
+        assertEquals("Incorrect name", "Ash", trainer.getName());
+        assertEquals("Incorrect team", Team.VALOR, trainer.getTeam());
+        assertNotNull("Pokedex is null", trainer.getPokedex());
     }
 }
