@@ -26,7 +26,7 @@ public class IPokemonTrainerFactoryTest extends TestCase {
     @Test
     public void testCreateTrainer() throws PokedexException {
         PokemonTrainer trainer = trainerFactory.createTrainer("Ash", Team.VALOR, pokedexFactory);
-        assertNotNull("Trainer is null", trainer);
+        assertNotNull("Trainer is null ", trainer);
         assertEquals("Incorrect name", "Ash", trainer.getName());
         assertEquals("Incorrect team", Team.VALOR, trainer.getTeam());
         assertNotNull("Pokedex is null", trainer.getPokedex());
