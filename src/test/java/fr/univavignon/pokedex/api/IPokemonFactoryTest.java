@@ -4,30 +4,31 @@ import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class IPokemonFactoryTest extends TestCase {
 
-    private IPokemonFactory provider;
-    private Pokemon pokemon;
+    private IPokemonFactory factory;
 
     @Before
-    public void setUp() throws PokedexException {
-        provider = mock(IPokemonFactory.class);
-        pokemon = new Pokemon(0, "Bulbizarre", 126, 126, 90,613,64,4000,4,56);
-        when(provider.createPokemon(0, 613, 64, 4000, 4)).thenReturn(pokemon);
+    public void setUp() {
+        factory = new PokemonFactoryImpl();
     }
 
-@Test
+    @Test
     public void testCreatePokemon() throws PokedexException {
-        Pokemon result = provider.createPokemon(0, 613, 64, 4000, 4);
-        assertNotNull("Pokemon null", result);
-        assertEquals("Mauvais Index", 0, result.getIndex());
-        assertEquals("Mauvais CP", 613, result.getCp());
-        assertEquals("Mauvais HP", 64, result.getHp());
-        assertEquals("Mauvais Dust", 4000, result.getDust());
-        assertEquals("Mauvais Candy", 4, result.getCandy());
-        assertEquals("Mauvais IV", 56.0, result.getIv());
+        Pokemon pokemon = factory.createPokemon(0, 613, 64, 4000, 4);
+        assertNotNull("Pokemon is null", pokemon);
+        assertEquals("Incorrect index", 0, pokemon.getIndex());
+        assertEquals("Incorrect name", "ExampleName", pokemon.getName());
+        assertEquals("Incorrect attack", 100, pokemon.getAttack());
+        assertEquals("Incorrect defense", 100, pokemon.getDefense());
+        assertEquals("Incorrect stamina", 100, pokemon.getStamina());
+        assertEquals("Incorrect CP", 613, pokemon.getCp());
+        assertEquals("Incorrect HP", 64, pokemon.getHp());
+        assertEquals("Incorrect dust", 4000, pokemon.getDust());
+        assertEquals("Incorrect candy", 4, pokemon.getCandy());
+        assertEquals("Incorrect IV", 56.0, pokemon.getIv(), 0.0);
     }
 }
