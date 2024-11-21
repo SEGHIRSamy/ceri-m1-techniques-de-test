@@ -1,0 +1,60 @@
+@options
+@packages
+@argfile
+-classpath
+'C:/Users/sam09/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'1.8'
+-sourcepath
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'pokedex 1 API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' 'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'pokedex 1 API'
+fr.univavignon.pokedex.api
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java/fr/univavignon/pokedex/api/IPokedex.java'
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java/fr/univavignon/pokedex/api/IPokedexFactory.java'
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java/fr/univavignon/pokedex/api/IPokemonFactory.java'
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java/fr/univavignon/pokedex/api/IPokemonMetadataProvider.java'
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java/fr/univavignon/pokedex/api/IPokemonTrainerFactory.java'
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java/fr/univavignon/pokedex/api/PokedexException.java'
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java/fr/univavignon/pokedex/api/PokedexFactoryImpl.java'
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java/fr/univavignon/pokedex/api/PokedexImpl.java'
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java/fr/univavignon/pokedex/api/Pokemon.java'
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java/fr/univavignon/pokedex/api/PokemonComparators.java'
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java/fr/univavignon/pokedex/api/PokemonFactoryImpl.java'
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java/fr/univavignon/pokedex/api/PokemonMetadata.java'
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java/fr/univavignon/pokedex/api/PokemonMetadataProviderImpl.java'
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java/fr/univavignon/pokedex/api/PokemonTrainer.java'
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java/fr/univavignon/pokedex/api/PokemonTrainerFactoryImpl.java'
+'C:/Users/sam09/Documents/Fac/TECHNIQUE DE TEST/src/main/java/fr/univavignon/pokedex/api/Team.java'
+C:\Users\sam09\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar = 1730975500406
+C:\Users\sam09\Documents\Fac\TECHNIQUE DE TEST\src\main\java = 1730974953066
+C:\Users\sam09\Documents\Fac\TECHNIQUE DE TEST\target\site\apidocs\allclasses-frame.html = 1732211599132
+C:\Users\sam09\Documents\Fac\TECHNIQUE DE TEST\target\site\apidocs\allclasses-noframe.html = 1732211599133
+C:\Users\sam09\Documents\Fac\TECHNIQUE DE TEST\target\site\apidocs\constant-values.html = 1732211599040
+C:\Users\sam09\Documents\Fac\TECHNIQUE DE TEST\target\site\apidocs\deprecated-list.html = 1732211599130
+C:\Users\sam09\Documents\Fac\TECHNIQUE DE TEST\target\site\apidocs\help-doc.html = 1732211599136
+C:\Users\sam09\Documents\Fac\TECHNIQUE DE TEST\target\site\apidocs\index-all.html = 1732211599127
+C:\Users\sam09\Documents\Fac\TECHNIQUE DE TEST\target\site\apidocs\index.html = 1732211599134
+C:\Users\sam09\Documents\Fac\TECHNIQUE DE TEST\target\site\apidocs\overview-tree.html = 1732211599117
+C:\Users\sam09\Documents\Fac\TECHNIQUE DE TEST\target\site\apidocs\package-list = 1732211599025
+C:\Users\sam09\Documents\Fac\TECHNIQUE DE TEST\target\site\apidocs\script.js = 1732211599139
+C:\Users\sam09\Documents\Fac\TECHNIQUE DE TEST\target\site\apidocs\serialized-form.html = 1732211599045
+C:\Users\sam09\Documents\Fac\TECHNIQUE DE TEST\target\site\apidocs\stylesheet.css = 1732211599138
