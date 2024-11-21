@@ -7,10 +7,6 @@ Avoir des tests qui nous couvrent bien et un code qui passe les tests en questio
 Pour vous assurez que votre code respecte un ensemble de critères de qualité, intégrez l'outil [checkstyle](https://checkstyle.sourceforge.io/) dans votre processus d'intégration continue. Cet outil vous permettra de générer un rapport sur la qualité syntaxique de votre code.  
 Pensez également à intégrer dans votre README un badge présentant une versions condensée des conclusions du rapport généré.  
 
-![Checkstyle](https://img.shields.io/badge/checkstyle-passing-brightgreen)
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/SEGHIRSamy/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/SEGHIRSamy/ceri-m1-techniques-de-test/tree/master)
-alors là y'en a un qui est pas dynamique et l'autre c'est pas le bon
-et le rapport généré dans target y'a (littéralement) 400 erreurs
 ## Épisode 2 - Doc-tor Proctor
 
 Un projet n'est rien sans sa documentation, et c'est encore mieux si elle est générée automatiquement !  
