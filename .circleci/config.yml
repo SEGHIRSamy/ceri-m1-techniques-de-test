@@ -1,19 +1,25 @@
 version: 2.1
+
 jobs:
   test:
     docker:
       - image: circleci/openjdk:11-jdk
     steps:
       - checkout
-      - run: mvn clean test
       - run:
-          name: Générer le rapport coco
+          name: Run Maven Clean Test
+          command: mvn clean test
+      - run:
+          name: Générer le rapport JaCoCo
           command: mvn jacoco:report
       - run:
-          name: Télécharger le rapport sur coco
+          name: Télécharger le rapport sur Codecov
           command: |
             curl -s https://codecov.io/bash | bash -s -- -t ${CODECOV_TOKEN}
+
   checkstyle:
+    docker:
+      - image: circleci/openjdk:11-jdk
     steps:
       - checkout
       - run:
@@ -25,4 +31,6 @@ workflows:
   test:
     jobs:
       - test
-      - checkstyle
+      - checkstyle:
+          requires:
+            - test
