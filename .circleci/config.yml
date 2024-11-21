@@ -1,0 +1,68 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: circleci/openjdk:11-jdk
+    steps:
+      - checkout
+      - run:
+          name: Run Maven Clean Test
+          command: mvn clean test
+      - run:
+          name: Générer le rapport JaCoCo
+          command: mvn jacoco:report
+      - run:
+          name: Télécharger le rapport sur Codecov
+          command: |
+            curl -s https://codecov.io/bash | bash -s -- -t ${CODECOV_TOKEN}
+      - run:
+          name: Générer la Javadoc
+          command: mvn javadoc:javadoc
+
+  checkstyle:
+    docker:
+      - image: circleci/openjdk:11-jdk
+    steps:
+      - checkout
+      - run:
+          name: Run Checkstyle
+          command: mvn checkstyle:check
+
+  deploy:
+    docker:
+      - image: circleci/python:3.8
+    steps:
+      - checkout
+      - run:
+          name: Installer Git
+          command: sudo apt-get install git
+      - run:
+          name: Cloner le dépôt GitHub Pages
+          command: |
+            git clone --branch gh-pages https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git gh-pages
+      - run:
+          name: Copier la Javadoc générée
+          command: |
+            cp -r target/site/apidocs/* gh-pages/
+      - run:
+          name: Commit et push de la Javadoc
+          command: |
+            cd gh-pages
+            git config --global user.email "circleci@circleci.com"
+            git config --global user.name "CircleCI"
+            git add .
+            git commit -m "Mise à jour de la Javadoc"
+            git push origin gh-pages
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - test
+      - checkstyle:
+          requires:
+            - test
+      - deploy:
+          requires:
+            - test
