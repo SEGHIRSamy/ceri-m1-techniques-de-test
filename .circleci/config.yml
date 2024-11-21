@@ -14,7 +14,6 @@ jobs:
           command: |
             curl -s https://codecov.io/bash | bash -s -- -t ${CODECOV_TOKEN}
   checkstyle:
-    executor: java-executor
     steps:
       - checkout
       - run:
