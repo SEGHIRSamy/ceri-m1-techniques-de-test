@@ -13,8 +13,17 @@ jobs:
           name: Télécharger le rapport sur coco
           command: |
             curl -s https://codecov.io/bash | bash -s -- -t ${CODECOV_TOKEN}
+  checkstyle:
+    executor: java-executor
+    steps:
+      - checkout
+      - run:
+          name: Run Checkstyle
+          command: mvn checkstyle:check
+
 workflows:
   version: 2
   test:
     jobs:
       - test
+      - checkstyle
