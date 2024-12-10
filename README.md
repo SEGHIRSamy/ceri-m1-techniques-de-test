@@ -16,8 +16,15 @@
 **Badge Checkstyle :**
 ![Checkstyle](https://img.shields.io/badge/checkstyle-passing-brightgreen)
 
-**
+
 ## Revue de code pour la Team Rocket 
+
+**Erreurs relevées**
+- Le code n'est pas commenté 
+- Il reste un TODO
+- Pas de gestions des excepetions
+- Il n'y a pas de limite sur les statistiques
+
 
 **Modificationn nécessaire de la classe de test :**
 - Les tests originaux ont fonctionnés à moitié sur la nouvelle implémentation, 2/4 sont passés.
