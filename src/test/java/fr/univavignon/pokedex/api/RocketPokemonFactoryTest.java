@@ -15,7 +15,7 @@ public class RocketPokemonFactoryTest {
     }
 
     @Test
-    public void testCreatePokemon() throws PokedexException {
+    public void testCreatePokemon() {
         int index = 0;
         int cp = 500;
         int hp = 60;
@@ -33,7 +33,7 @@ public class RocketPokemonFactoryTest {
     }
 
     @Test
-    public void testCreatePokemonWithDifferentIndex() throws PokedexException {
+    public void testCreatePokemonWithDifferentIndex() {
         int index = 133;
         int cp = 1000;
         int hp = 120;
@@ -50,25 +50,31 @@ public class RocketPokemonFactoryTest {
         assertEquals(candy, pokemon.getCandy());
     }
 
-    @Test(expected = PokedexException.class)
-    public void testCreatePokemonWithInvalidIndex() throws PokedexException {
+    @Test
+    public void testCreatePokemonWithInvalidIndex() {
         int index = -1;
         int cp = 500;
         int hp = 60;
         int dust = 4000;
         int candy = 3;
 
-        pokemonFactory.createPokemon(index, cp, hp, dust, candy);
+        Pokemon pokemon = pokemonFactory.createPokemon(index, cp, hp, dust, candy);
+
+        assertNotNull(pokemon);
+        assertEquals("Ash's Pikachu", pokemon.getName());
     }
 
-    @Test(expected = PokedexException.class)
-    public void testCreatePokemonWithIndexOutOfUpperBound() throws PokedexException {
+    @Test
+    public void testCreatePokemonWithIndexOutOfUpperBound() {
         int index = 155;
         int cp = 500;
         int hp = 60;
         int dust = 4000;
         int candy = 3;
 
-        pokemonFactory.createPokemon(index, cp, hp, dust, candy);
+        Pokemon pokemon = pokemonFactory.createPokemon(index, cp, hp, dust, candy);
+
+        assertNotNull(pokemon);
+        assertEquals("MISSINGNO", pokemon.getName());
     }
 }
