@@ -19,7 +19,7 @@
 **
 ## Revue de code pour la Team Rocket 
 
-**Modification nécessaire de la classe de test :**
+**Modificationn nécessaire de la classe de test :**
 - Les tests originaux ont fonctionnés à moitié sur la nouvelle implémentation, 2/4 sont passés.
 - Les tests existants ont été modifiés pour s'adapter à l'implémentation de la Team Rocket, qui ne gère pas les exceptions comme l'implémentation originale. 
 - Les tests originaux incluaient la gestion des exceptions, ce qui n'était pas compatible avec l'implémentation de la Team Rocket. Ces parties ont été supprimées pour assurer la compatibilité.
