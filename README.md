@@ -14,9 +14,19 @@
 **Badge Checkstyle :**
 ![Checkstyle](https://img.shields.io/badge/checkstyle-passing-brightgreen)
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/SEGHIRSamy/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/SEGHIRSamy/ceri-m1-techniques-de-test/tree/master)
+
 alors là y'enn a un qui est pas dynamique et l'autre c'est pas le bon et le rapport généré dansss target y'a (littéralement) 400 erreurs
 
 Pour la partie 2 TP5 : je CROIS qu'il faut faire le token comme avait fait Simon dans devops
+
+## Revue de code pour la Team Rocket 
+
+**Modification nécessaire de la classe de test :**
+- Les tests originaux ont fonctionnés à moitié sur la nouvelle implémentation, 2/4 sont passés.
+- Les tests existants ont été modifiés pour s'adapter à l'implémentation de la Team Rocket, qui ne gère pas les exceptions comme l'implémentation originale. 
+- Les tests originaux incluaient la gestion des exceptions, ce qui n'était pas compatible avec l'implémentation de la Team Rocket. Ces parties ont été supprimées pour assurer la compatibilité.
+
+
 ## Introduction
 
 Vous allez à travers ces projet mettre en application une partie des aspects évoqués en cours vis à vis des techniques de tests.  
