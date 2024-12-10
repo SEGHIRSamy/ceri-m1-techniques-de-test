@@ -11,11 +11,13 @@
 
 **Badge Codecov :**
 [![codecov](https://codecov.io/github/SEGHIRSamy/ceri-m1-techniques-de-test/graph/badge.svg?token=DMDH1H58MR)](https://codecov.io/github/SEGHIRSamy/ceri-m1-techniques-de-test)
+
+
 **Badge Checkstyle :**
 ![Checkstyle](https://img.shields.io/badge/checkstyle-passing-brightgreen)
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/SEGHIRSamy/ceri-m1-techniques-de-test/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/SEGHIRSamy/ceri-m1-techniques-de-test/tree/master)
 
-alors là y'enn a un qui est pas dynamique et l'autre c'est pas le bon et le rapport généré dansss target y'a (littéralement) 400 erreurs
+alors là y'en a un qui est pas dynamique et l'autre c'est pas le bon et le rapport généré dansss target y'a (littéralement) 400 erreurs
 
 Pour la partie 2 TP5 : je CROIS qu'il faut faire le token comme avait fait Simon dans devops
 
