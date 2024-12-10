@@ -49,7 +49,7 @@ jobs:
           name: Commit et push de la Javadoc
           command: |
             cd gh-pages
-            git config --global user.email "circleci@circleci.com"
+            git config --global user.email "ci@circleci.com"
             git config --global user.name "CircleCI"
             git add .
             git commit -m "Mise à jour de la Javadoc"
