@@ -37,6 +37,12 @@
             <artifactId>commons-collections4</artifactId>
             <version>4.4</version> <!-- Vérifie la dernière version disponible sur Maven Central -->
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
