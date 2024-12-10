@@ -45,15 +45,15 @@ jobs:
           name: Copier la Javadoc générée
           command: |
             cp -r target/site/apidocs/* gh-pages/
-      - run:
-          name: Commit et push de la Javadoc
-          command: |
-            cd gh-pages
-            git config --global user.email "ci@circleci.com"
-            git config --global user.name "CircleCI"
-            git add .
-            git commit -m "Mise à jour de la Javadoc"
-            git push https://$Token@github.com/SEGHIRSamy/ceri-m1-techniques-de-test.git gh-pages
+#      - run:
+#          name: Commit et push de la Javadoc
+#          command: |
+#            cd gh-pages
+#            git config --global user.email "ci@circleci.com"
+#            git config --global user.name "CircleCI"
+#            git add .
+#            git commit -m "Mise à jour de la Javadoc"
+#            git push https://$Token@github.com/SEGHIRSamy/ceri-m1-techniques-de-test.git gh-pages
 
 workflows:
   version: 2
